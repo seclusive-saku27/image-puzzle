@@ -1,0 +1,79 @@
+/* Body and main puzzle container styling */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #ff6b6b, #feca57, #54a0ff, #5f27cd);
+    animation: gradientBG 6s ease infinite;
+    background-size: 500% 500%;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Style for the upload button */
+button {
+    padding: 12px 25px;
+    margin-bottom: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background: linear-gradient(135deg, #333, #555);
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #555, #777);
+    transform: scale(1.05);
+}
+
+/* Puzzle container and pieces styling */
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 4px;
+    position: relative;
+    width: 310px;
+    height: 310px;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Puzzle pieces */
+.puzzle-piece {
+    width: 100px;
+    height: 100px;
+    background-size: 300px 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.puzzle-piece:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Selected piece highlight */
+.puzzle-piece.selected {
+    outline: 3px solid #ffd700;
+    transform: scale(1.15);
+    box-shadow: 0 6px 20px rgba(255, 223, 0, 0.5);
+}
